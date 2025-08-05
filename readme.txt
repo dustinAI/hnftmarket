@@ -72,10 +72,9 @@ Even though it's not perfect or built with Pear natively, I hope you'll give it 
 ## 🤝 Contributions
 
 If you have any questions or improvements, feel free to open an issue or pull request — your support means a lot.
-<div align="center">
-
-**Made with ❤️ for the NFT community**
-
-[⭐ Star this project](https://github.com/dustinAI/hnftmarket) if you find it useful!
 
 
+
+---
+
+Thanks for checking it out!
