@@ -15,7 +15,7 @@ npm install -g pear
 Installation
 Clone this repo and navigate into it:
 
-git clone https://github.com/dustinAI/HYPERMarketNFT-P2P
+git clone https://github.com/dustinAI/hnftmarket
 cd HYPERMarketNFT-P2P
 Install dependencies:
 
