@@ -1,0 +1,34 @@
+como usar batch_mint.js
+
+abrir el archivo en un bloc de notas y colocar la wallet con la que se tiene en el market se consigue al abrir: http://127.0.0.1:3000
+
+
+
+import fs from 'fs/promises';
+import path from 'path';
+import FormData from 'form-data';
+import fetch from 'node-fetch';
+
+// =================================================================
+// --- CONFIGURACIÓN ---
+// =================================================================
+const OWNER_ADDRESS = 'your wallet address';
+const API_BASE_URL = 'http://127.0.0.1:3000';
+const DELAY_BETWEEN_MINTS_MS = 3100;
+const LOG_FILE = './mint_log.json'; 
+
+
+Usar el boton DAPP autorizer en la pagina principal web:  http://127.0.0.1:3000 , esperar a que se procese la autorizacion
+
+en la raiz, crear la carpeta : public dentro de esa carpeta : images que contendra la imagenes a subir
+
+Correr su peer normalmente
+Abrir otra terminal con la misma ruta que su peer, ya en la linea de comandos escribir: 
+
+node batch_mint.js "C:\Users\yourcarpetofyourpeer\public\images"
+
+El proceso comenzara, si da error, el seguira, creara y guardara un archivo llamado: mint_log.json, donde se guardara los que tengan exito, si desea puede cancelar el proceso: control + C y volver a iniciar para incluir los que dieron error de mint. Si al final muestra que algunos no se minaron, volver a correr el script y repetir esto esto hasta tener el mensaje de que se completo la subida de todo el contenido de la carpeta
+
+
+
+
