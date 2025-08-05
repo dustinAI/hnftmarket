@@ -1,34 +1,86 @@
-como usar batch_mint.js
-
-abrir el archivo en un bloc de notas y colocar la wallet con la que se tiene en el market se consigue al abrir: http://127.0.0.1:3000
-
+1. Set Your Wallet Address
+Open the batch_mint.js file using a text editor or code editor. Locate the line:
 
 
-import fs from 'fs/promises';
-import path from 'path';
-import FormData from 'form-data';
-import fetch from 'node-fetch';
-
-// =================================================================
-// --- CONFIGURACIÓN ---
-// =================================================================
 const OWNER_ADDRESS = 'your wallet address';
-const API_BASE_URL = 'http://127.0.0.1:3000';
-const DELAY_BETWEEN_MINTS_MS = 3100;
-const LOG_FILE = './mint_log.json'; 
+Replace 'your wallet address' with YOUR actual personal wallet address. You can obtain it by visiting:
+http://127.0.0.1:3000
+
+2. Authorize the DApp
+In your browser, go to the main page:
+http://127.0.0.1:3000
+
+Click on the DAPP Authorizer button and wait until the authorization is processed.
+
+3. Prepare the Image Folders
+Inside the root directory of your project, create the following folder structure:
 
 
-Usar el boton DAPP autorizer en la pagina principal web:  http://127.0.0.1:3000 , esperar a que se procese la autorizacion
+/public
+  └── /images
+Place all the images you want to upload inside the images folder.
 
-en la raiz, crear la carpeta : public dentro de esa carpeta : images que contendra la imagenes a subir
+4. Start the Minting Process
+Make sure your peer is running normally.
 
-Correr su peer normalmente
-Abrir otra terminal con la misma ruta que su peer, ya en la linea de comandos escribir: 
-
-node batch_mint.js "C:\Users\yourcarpetofyourpeer\public\images"
-
-El proceso comenzara, si da error, el seguira, creara y guardara un archivo llamado: mint_log.json, donde se guardara los que tengan exito, si desea puede cancelar el proceso: control + C y volver a iniciar para incluir los que dieron error de mint. Si al final muestra que algunos no se minaron, volver a correr el script y repetir esto esto hasta tener el mensaje de que se completo la subida de todo el contenido de la carpeta
+Then, open another terminal in the same directory as your peer and run the following command:
 
 
+node batch_mint.js "C:\Users\your_peer_folder\public\images"
+5. During and After the Process
+The process will start automatically.
+
+If any minting fails, the script will continue with the remaining ones.
+
+A file called mint_log.json will be created to store the successfully minted items.
+
+You can cancel the process at any time using Control + C.
+
+If some files fail to mint, re-run the script. Repeat until all files are successfully uploaded.
+
+
+
+
+
+
+1. Configurar la dirección de la wallet
+Abre el archivo batch_mint.js con un bloc de notas o editor de código. Busca la línea:
+
+
+const OWNER_ADDRESS = 'your wallet address';
+Y reemplaza 'your wallet address' por la dirección de tu wallet, la cual puedes obtener desde la página:
+http://127.0.0.1:3000
+
+2. Autorizar la DApp
+Desde tu navegador, ve a la página principal:
+http://127.0.0.1:3000
+
+Haz clic en el botón DAPP Authorizer y espera a que se complete el proceso de autorización.
+
+3. Preparar las carpetas con imágenes
+En la raíz del proyecto, crea la siguiente estructura de carpetas:
+
+
+/public
+  └── /images
+Coloca dentro de la carpeta images todas las imágenes que deseas subir.
+
+4. Iniciar el proceso de mint
+Primero, asegúrate de que tu peer esté corriendo normalmente.
+
+Luego, abre otra terminal en la misma ruta donde se encuentra tu peer y ejecuta el siguiente comando:
+
+
+node batch_mint.js "C:\Users\tu_carpeta_peer\public\images"
+5. Durante y después del proceso
+El proceso comenzará automáticamente.
+
+Si ocurre un error durante el mint, el script continuará con los demás.
+
+Se generará un archivo llamado mint_log.json donde se registran los que fueron minteados exitosamente.
+
+Puedes cancelar el proceso en cualquier momento con Control + C.
+
+Si al finalizar algunos archivos no fueron minteados, vuelve a ejecutar el script. Repite el proceso hasta que todos los archivos hayan sido subidos exitosamente.
 
 
